@@ -1,43 +1,43 @@
 print("\n")  # Print a new line for better readability in the output
-import random  # Import the random module to allow random choice selection
+import random  # Import the random module to enable random choice selection
 
 class Game:  # Define the Game class, which contains all the game logic and player interaction
     def __init__(self):  # Initialize the Game class with default attributes
         self.computer_final_scores = []  # List to store the computer's scores at the end of each game
         self.player_final_scores = []  # List to store the player's scores at the end of each game
-        self.final_round = []  # Stores the final round number
-        self.player_points = 0  # Counter to track the player's points
-        self.computer_points = 0  # Counter to track the computer's points
+        self.final_round = []  # List to store the final round number
+        self.player_points = 0  # Counter for the player's points
+        self.computer_points = 0  # Counter for the computer's points
         self.ties = 0  # Counter for the number of tied rounds
         self.round = 1  # Variable to keep track of the round number
 
     def play_game(self):  # Define the main method for executing game logic
-        options = ("rock", "paper", "scissor")  # Define the available options for the game as a tuple
+        options = ("rock", "paper", "scissors")  # Define the available options for the game
 
-        while True:  # Start an infinite loop that will run until the player chooses to end the game
+        while True:  # Start an infinite loop until the player chooses to end the game
             try:
-                if self.round < 2:  # Check if it's the first round
-                    print("Welcome to round one! Have fun with this game.")  # Friendly welcome message for the player
+                if self.round == 1:  # Welcome message for the first round
+                    print("Welcome to Round One! Let's have some fun with this game.")
 
-                print(f"You can choose between {options}")  # Display the available options to the player
-                player_choice = input("Please choose between these options to continue the game: ").lower()  # Prompt player for their choice, converting input to lowercase for consistency
+                print(f"Choose one of the following: {options}")  # Display the available options to the player
+                player_choice = input("Please choose 'rock', 'paper', or 'scissors' to continue: ").lower()  # Get player input, convert to lowercase for consistency
                 computer_choice = random.choice(options)  # Randomly select an option for the computer
 
-                # Validate player's input to ensure it's one of the allowed choices
+                # Validate player input to ensure it's valid
                 if player_choice not in options:
-                    print("\n")  # Add a new line for readability
-                    raise ValueError("Invalid input, please type 'rock', 'paper', or 'scissor' to continue.")  # Raise an error for invalid input
+                    print("\n")  # New line for readability
+                    raise ValueError("Invalid input. Please type 'rock', 'paper', or 'scissors' to continue.")  # Error for invalid input
 
-                # Display both player and computer choices
-                print(f"The player has chosen: {player_choice}")
-                print(f"The computer has chosen: {computer_choice}")
+                # Display choices
+                print(f"Player chose: {player_choice}")
+                print(f"Computer chose: {computer_choice}")
 
                 # Determine the outcome based on the player’s and computer's choices
                 if player_choice == computer_choice:  # Check for a tie
                     print("Both players have chosen the same option, it's a tie.")
-                    self.ties += 1  # Increment the tie counter
+                    self.ties += 1  # Increment tie counter
 
-                elif player_choice == "rock" and computer_choice == "scissor":
+                elif player_choice == "rock" and computer_choice == "scissors":
                     print("The player has won, good job!")
                     self.player_points += 1  # Add a point to the player's score
 
@@ -53,55 +53,48 @@ class Game:  # Define the Game class, which contains all the game logic and play
                     print("The computer has won, better luck next time.")
                     self.computer_points += 1  # Add a point to the computer's score
 
-                # Prompt player to either end the game or continue playing
-                next_step = input("Type 'e' to end this game or 'c' to continue: ").lower()  # Capture player decision
+                # Ask if the player wants to continue or end
+                next_step = input("Type 'e' to end the game or 'c' to continue: ").lower()  # Capture decision
 
-                # Validate input for next step to ensure only 'e' or 'c' is accepted
+                # Validate input for next step
                 if next_step not in ["e", "c"]:
-                    print("\n")  # Add a new line for readability
-                    raise ValueError("Invalid input, please type 'e' to end or 'c' to continue.")  # Raise error for invalid next-step input
+                    print("\n")  # New line for readability
+                    raise ValueError("Invalid input. Type 'e' to end or 'c' to continue.")  # Error for invalid next step
 
-                elif next_step == "e":  # Check if the player chose to end the game
+                elif next_step == "e":  # If player chooses to end
                     print("\n")
-                    print("The player has chosen to end the game.")
-                    print(f"The player played {self.round} rounds")  # Display total rounds played
+                    print("Game Over.")
+                    print(f"Rounds played: {self.round}")
                     self.player_final_scores.append(self.player_points)  # Record player's final score
                     self.computer_final_scores.append(self.computer_points)  # Record computer's final score
                     print(f"Final Score - Player: {self.player_points}, Computer: {self.computer_points}")  # Display final scores
-                    
-                    if self.ties < 1:
-                        print("In this round, there were no ties.")  # Indicate if there were no ties
 
+                    if self.ties == 0:
+                        print("No ties in this game.")  # Indicate if there were no ties
                     else:
-                        print(f"There were {self.ties} tie(s) in this game.")  # Display the number of ties
+                        print(f"Ties: {self.ties} time(s)")  # Display the number of ties
 
-                                        #Winner output based on points in the game
+                    # Determine final winner
                     if self.player_points > self.computer_points:
-                        print(f"The final winner is the player you have done a great job")
-
-                    elif self.computer_points == self.computer_points:
-                        print("Both have the same points in this round no one wins")
-                        
+                        print("Congratulations! The Player is the final winner.")
+                    elif self.player_points < self.computer_points:
+                        print("Computer wins the game! Better luck next time.")
                     else:
-                        print(f"In this battle the pc have won mabyee nex time")
-                        
-                    print("Thank you for playing!")  # Thank the player for participating
-                    break  # Exit the loop and end the game
+                        print("It's a draw! Both have the same score.")
 
-                else:  # If the player chose to continue
-                    print("The player has chosen to play another round.")
-                    print("Good luck in the next round!")
-                    print("\n")
-                    print("Welcome to the next round.")
-                    self.round += 1  # Increment the round number
-                    print(f"Welcome to round {self.round}")
-                    print(f"Current Score - Player: {self.player_points}, Computer: {self.computer_points}")  # Show current score
-                    continue  # Restart the game loop for the next round
+                    print("Thank you for playing!")  # End message
+                    break  # End the game loop
 
-            except ValueError as error:  # Handle invalid input cases
+                else:  # If player continues
+                    print("Moving to the next round...")
+                    self.round += 1  # Increment round counter
+                    print(f"Current Score - Player: {self.player_points}, Computer: {self.computer_points}\n")  # Display current score
+                    print(f"Round {self.round} begins!")
+                    
+            except ValueError as error:  # Handle invalid input
                 print(error)  # Display error message
-                print("Please follow the instructions and try again.")  # Friendly reminder to provide valid input
+                print("Please follow the instructions and try again.")  # Reminder for valid input
 
-# Create an instance of the Game class and start the game by calling play_game
+# Create an instance of the Game class and start the game
 game_instance = Game()
 game_instance.play_game()
