@@ -79,6 +79,9 @@ class Game:  # Define the Game class, which contains all the game logic and play
                     if self.player_points > self.computer_points:
                         print(f"The final winner is the player you have done a great job")
 
+                    elif self.computer_points == self.computer_points:
+                        print("Both have the same points in this round no one wins")
+                        
                     else:
                         print(f"In this battle the pc have won mabyee nex time")
                         
