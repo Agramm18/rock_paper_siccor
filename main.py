@@ -29,8 +29,6 @@ class Game:  # Define the Game class
                 # Determine the winner based on choices
                 if player_choice == computer_choice:
                     print("Both players have chosen the same option, it's a tie.")
-                    self.player_points = 0
-                    self.computer_points = 0
 
                 elif player_choice == "rock" and computer_choice == "scissors":
                     print("The player has won, good job!")
