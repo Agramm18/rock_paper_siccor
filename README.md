@@ -1,45 +1,55 @@
+# Rock-Paper-Scissors Game
 
-Rock-Paper-Scissors Game
+This repository contains a Python-based, interactive Rock-Paper-Scissors game. Designed with simplicity and user experience in mind, the game offers an engaging way to practice basic Python skills and understand game logic. This project is ideal for anyone looking to explore Python programming through a practical example, including private users or employers assessing coding style, error handling, and user interaction techniques.
 
-A simple Python-based Rock-Paper-Scissors game where you play against the computer! This game implements the basic mechanics of Rock-Paper-Scissors, with options to play multiple rounds, track scores, and end the game whenever you choose.
+## Features
 
-Features
+- **Interactive Gameplay**: The game allows players to go multiple rounds against a computer opponent, with choices between rock, paper, and scissors.
+- **Score Tracking**: Each round’s score is recorded, displaying total wins, losses, and ties by the game’s end.
+- **Error Handling**: The program handles user inputs carefully, ensuring only valid choices are accepted to maintain smooth gameplay.
+- **User-Friendly Interface**: With clear prompts and feedback, this project is designed to be engaging and accessible, even to those unfamiliar with Python.
 
-- Interactive Gameplay: Choose between "rock", "paper", or "scissors" to compete against a random computer choice.
-- Score Tracking: Scores for both player and computer are tracked across multiple rounds.
-- Input Validation: Ensures players enter valid choices and commands.
-- Flexible Ending: End the game whenever you like, and view the final score for both sides.
+## How It Works
 
-Requirements
+- **Choice Options**: The player is prompted to choose between "rock," "paper," or "scissors." The computer's choice is randomly selected.
+- **Game Logic**: The program evaluates each choice combination and determines the winner based on classic Rock-Paper-Scissors rules.
+- **Endgame Options**: After each round, players can choose to continue or end the game, with a final score summary displayed upon exiting.
 
-Python: This code is compatible with Python 3.
+## Code Highlights
 
-How to Play
+- **Object-Oriented Design**: The game is structured around a `Game` class, making the code modular, organized, and easier to extend.
+- **Input Validation**: Handles incorrect inputs gracefully with appropriate error messages.
+- **Round Management**: The game tracks rounds and scores dynamically, offering real-time feedback between rounds.
 
-1. Clone or download this repository.
-2. Run the script with:
+## Usage
+
+1. **Install Python**: Ensure Python 3.x is installed on your machine.
+2. **Clone the Repository**: Clone the repository to your local machine.
+3. **Run the Game**: Execute the game script in the terminal using:
    ```bash
-   python3 rock_paper_scissors.py
+   python game.py
    ```
-3. Follow the prompts to:
-   - Choose between "rock", "paper", or "scissors" each round.
-   - Decide whether to continue or end the game after each round.
+4. **Enjoy the Game**: Follow the prompts to play.
 
-## Game Rules
+## Example Output
 
-1. Choices: Each player (you and the computer) can choose one of three options: rock, paper, or scissors.
-2. Winning Conditions:
-   - Rock beats Scissors.
-   - Scissors beat Paper.
-   - Paper beats Rock.
-3. Ties: If both players choose the same option, the round is a tie with no points awarded.
-4. Game End: At the end of each round, you may choose to either continue or end the game.
+```
+Welcome to round one! Have fun with this game.
+You can choose between ('rock', 'paper', 'scissor')
+Please choose between these options to continue the game: rock
+The player has chosen: rock
+The computer has chosen: scissors
+The player has won, good job!
+Type 'e' to end this game or 'c' to continue: e
+The player has chosen to end the game.
+The player played 1 rounds
+Final Score - Player: 1, Computer: 0
+There were 0 tie(s) in this game.
+Thank you for playing!
+```
 
-## Code Structure
+## Future Enhancements
 
-- Game` Class: The main class containing the game logic.
-  - Attributes:
-    - player_points` and computer_points: Track the current round’s points.
-    - player_final_scores` and `computer_final_scores`: Store final scores across games.
-  - Methods:
-    - `play_game()`: Runs the main game loop, handles input, and checks winning conditions.
+- **Additional Game Modes**: Implement options for best of three, five, or custom rounds.
+- **User Profiles**: Track scores across sessions.
+- **Advanced Moves**: Include other moves such as "lizard" and "Spock" for expanded gameplay.
