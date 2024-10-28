@@ -68,11 +68,13 @@ class Game:  # Define the Game class, which contains all the game logic and play
                     self.player_final_scores.append(self.player_points)  # Record player's final score
                     self.computer_final_scores.append(self.computer_points)  # Record computer's final score
                     print(f"Final Score - Player: {self.player_points}, Computer: {self.computer_points}")  # Display final scores
-                    print(f"There were {self.ties} tie(s) in this game.")  # Display the number of ties
-
+                    
                     if self.ties < 1:
                         print("In this round, there were no ties.")  # Indicate if there were no ties
 
+                    else:
+                        print(f"There were {self.ties} tie(s) in this game.")  # Display the number of ties
+                        
                     print("Thank you for playing!")  # Thank the player for participating
                     break  # Exit the loop and end the game
 
