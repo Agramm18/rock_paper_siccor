@@ -74,9 +74,10 @@ class Game:  # Define the Game class, which contains all the game logic and play
 
                     elif self.ties == 1:
                         print(f"In this game there where: {self.ties} tie")
+
                     else:
                         self.ties > 1
-                        print(f"In this game where: {self.ties}ties")  # Display the number of ties
+                        print(f"In this game where: {self.ties} ties")  # Display the number of ties
 
                     # Determine final winner
                     if self.player_points > self.computer_points:
