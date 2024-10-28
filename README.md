@@ -47,9 +47,3 @@ Final Score - Player: 1, Computer: 0
 There were 0 tie(s) in this game.
 Thank you for playing!
 ```
-
-## Future Enhancements
-
-- **Additional Game Modes**: Implement options for best of three, five, or custom rounds.
-- **User Profiles**: Track scores across sessions.
-- **Advanced Moves**: Include other moves such as "lizard" and "Spock" for expanded gameplay.
