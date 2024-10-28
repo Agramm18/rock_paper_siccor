@@ -74,6 +74,13 @@ class Game:  # Define the Game class, which contains all the game logic and play
 
                     else:
                         print(f"There were {self.ties} tie(s) in this game.")  # Display the number of ties
+
+                                        #Winner output based on points in the game
+                    if self.player_points > self.computer_points:
+                        print(f"The final winner is the player you have done a great job")
+
+                    else:
+                        print(f"In this battle the pc have won mabyee nex time")
                         
                     print("Thank you for playing!")  # Thank the player for participating
                     break  # Exit the loop and end the game
