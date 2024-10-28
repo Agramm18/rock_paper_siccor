@@ -71,8 +71,12 @@ class Game:  # Define the Game class, which contains all the game logic and play
 
                     if self.ties == 0:
                         print("No ties in this game.")  # Indicate if there were no ties
+
+                    elif self.ties == 1:
+                        print(f"In this game there where: {self.ties} tie")
                     else:
-                        print(f"Ties: {self.ties} time(s)")  # Display the number of ties
+                        self.ties > 1
+                        print(f"In this game where: {self.ties}ties")  # Display the number of ties
 
                     # Determine final winner
                     if self.player_points > self.computer_points:
@@ -80,7 +84,7 @@ class Game:  # Define the Game class, which contains all the game logic and play
                     elif self.player_points < self.computer_points:
                         print("Computer wins the game! Better luck next time.")
                     else:
-                        print("It's a draw! Both have the same score.")
+                        print("It's a draw! Both have the same score no one wins in the end.")
 
                     print("Thank you for playing!")  # End message
                     break  # End the game loop
